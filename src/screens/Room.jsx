@@ -32,7 +32,6 @@ const RoomPage = () => {
         video: true,
       });
       setMyStream(stream);
-      console.log(`Incoming Call`, from, offer);
       const ans = await peer.getAnswer(offer);
       socket.emit("call:accepted", { to: from, ans });
     },
